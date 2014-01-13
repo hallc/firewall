@@ -22,9 +22,16 @@ case "$1" in
 		iptables --policy OUTPUT ACCEPT
 		iptables --policy FORWARD ACCEPT
 
+		# Accept incoming traffic on the loopback (127.0.0.1/localhost) interface.
 		iptables -A INPUT -i lo -j ACCEPT
-		#iptables -A INPUT -p icmp -j ACCEPT
+		# Accept incoming traffic for established connections regardless of
+		# port. This allows the responses to your outbound traffic in.
 		iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+		# Uncomment this line to allow ICMP (ping, traceroute, etc) traffic.
+		#iptables -A INPUT -p icmp -j ACCEPT
+
+		# Uncomment this line to allow SSH traffic.
 		#iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT
 
 		echo "done."

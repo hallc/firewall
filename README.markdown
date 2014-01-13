@@ -1,4 +1,4 @@
-# Firewall
+# firewall
 A simple iptables firewall that blocks incoming connections.
 
 ## Installing

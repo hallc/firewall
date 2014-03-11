@@ -50,6 +50,6 @@ case "$1" in
 		iptables -L
 	;;
 	*)
-		echo "Usage: firewall {start|stop|status}"
+		echo "Usage: firewall [start|stop|status]"
 	;;
 esac

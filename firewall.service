@@ -1,0 +1,16 @@
+[Unit]
+Description=Firewall
+Documentation=https://github.com/hallc/firewall
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/etc/init.d/firewall start
+ExecStop=/etc/init.d/firewall stop
+ExecReload=/etc/init.d/firewall stop
+ExecReload=/etc/init.d/firewall start
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=network-online.target

@@ -2,7 +2,7 @@
 A simple iptables firewall that blocks incoming connections.
 
 ## Installing
-Drop `firewall` in `/etc/init.d` and configure it to start automatically.  Instructions will vary depending on your distribution, but the script includes headers for `chkconfig` and [LSB Init Scripts](https://wiki.debian.org/LSBInitScripts).
+Drop `firewall` in `/etc/init.d` and configure it to start automatically.  Instructions will vary depending on your distribution, but the script includes headers for `chkconfig` and [LSB Init Scripts](https://wiki.debian.org/LSBInitScripts).  A `firewall.service` unit file is provided for use with [systemd](https://wiki.debian.org/systemd/Services).
 
 ## Allowing ICMP & SSH
 To allow ICMP traffic (ping, traceroute, etc), uncomment line 32:
